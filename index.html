@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="background-container">
+        <!-- This will hold all the background album arts -->
+        <div class="background-albums">
+            <img src="How You Like Me Now.jpg" alt="Background Album Art">
+            <img src="Swallow the sun.jpg" alt="Background Album Art">
+            <img src="New Moon.jpg" alt="Background Album Art">
+            <img src="ludovico einaudi experience slowed.jpg" alt="Background Album Art">
+        </div>
+    </div>
+    <div class="phone-frame">
+        <div class="music-player">
+            <img id="album-art" src="How You Like Me Now.jpg" alt="Album Art" class="album-art">
+            <div class="track-info">
+                <!-- Display the song title and artist dynamically -->
+                <h3 id="track-title">How You Like Me Now</h3>
+                <p id="artist-name">Unknown Artist</p>
+            </div>
+            <div class="controls-container">
+                <button id="repeat"><i class="fas fa-redo"></i></button>
+                <button id="prev"><i class="fas fa-backward"></i></button>
+                <button id="play-pause"><i class="fas fa-play"></i></button>
+                <button id="next"><i class="fas fa-forward"></i></button>
+                <button id="shuffle"><i class="fas fa-random"></i></button>
+            </div>
+            <!-- Volume control slider -->
+            <div id="volume-control">
+                <label for="volume">Volume</label>  <!-- Label for the volume control -->
+                <input type="range" id="volume" min="0" max="1" step="0.1" > <!-- Volume control slider -->
+            </div>
+            <!-- Progress bar to show playback progress -->
+            <div class="progress-bar">
+                <progress id="progress" value="0" max="100"></progress> <!-- Progress bar element -->
+            </div>
+            <!-- Time display for current time and total duration -->
+            <div class="time-display">
+                <span id="current-time">0:00</span> / <span id="total-duration">0:00</span>
+            </div>
+            <!-- <div class="lyrics-display">
+                <p id="lyrics">Lyrics will be displayed here...</p>
+            </div> -->
+        </div>
+    </div>    
+</body>
+</html>
+
+
+
+<!-- <div class="controls-container">
+            <button id="prev"><i class="fas fa-backward"></i></button>
+            <button id="play"><i class="fas fa-play"></i></button>
+            <button id="pause"><i class="fas fa-pause"></i></button>
+            <button id="next"><i class="fas fa-forward"></i></button>
+            <button id="shuffle"><i class="fas fa-random"></i></button>
+            <button id="repeat"><i class="fas fa-redo"></i></button>
+        </div>  -->
