@@ -1,0 +1,348 @@
+/* General body styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Music player container styling */
+.music-player {
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transform: translate(29px, -360px);
+    position: relative;
+    z-index: 3;
+}
+
+
+/* Controls styling */
+.controls-container {
+    font-weight: 300;
+}
+.controls-container button {
+    background-color: transparent;
+    color: #000000;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.controls-container button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+}
+
+.controls-container button:focus {
+    box-shadow: 0 0 8px rgba(51, 51, 51, 0.8); 
+}
+
+.controls-container button i {
+    font-size: 25px;
+}
+
+
+/* Volume control styling */
+#volume-control {
+    margin-top: 20px;
+    width: 50%; 
+    transform: translate(80px, 10px); 
+    text-align: center; 
+}
+
+#volume-control label {
+    font-size: 0.99rem; 
+    color: #212121; 
+    font-weight: bold; 
+    margin-right: 15px;
+}
+
+#volume {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px; 
+    background: #ccc; 
+    border-radius: 10px; 
+    outline: none;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#volume:hover {
+    background: linear-gradient(to right, #d5d8dd, #49679c); 
+}
+
+#volume::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    width: 16px;
+    height: 16px;
+    background: #007acc; 
+    border-radius: 50%; 
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s, background 0.3s;
+}
+
+#volume::-webkit-slider-thumb:hover {
+    transform: scale(1.3); 
+    background: #005999; 
+}
+
+#volume::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #007acc;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Progress bar styling */
+.progress-bar {
+    margin-top: 10px;
+}
+
+.progress-bar progress {
+    width: 100%;
+}
+
+/* Progress line styling */
+.progress-line-container {
+    position: relative; 
+    width: 100%;
+    height: 8px; 
+    background: #d3d3d3; 
+    border-radius: 4px; 
+    margin: 10px 0;
+    margin-bottom: 30px;
+}
+
+#progress-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; 
+    width: 0%;
+    background: linear-gradient(to right, brown, #402727); 
+    border-radius: 4px; 
+    transition: width 0.2s ease-in-out; 
+    z-index: 1; 
+}
+
+#progress-thumb {
+    position: absolute;
+    top: 50%; 
+    transform: translate(-50%, -50%); 
+    height: 16px; 
+    width: 16px;
+    background: #713535; 
+    border-radius: 50%; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+    z-index: 2; 
+    transition: transform 0.2s; 
+}
+
+#progress-thumb:hover {
+    transform: translate(-50%, -50%) scale(1.4); 
+    background: linear-gradient(to right, #d5d8dd, #49679c); 
+}
+
+#progress-line:hover {
+    background: linear-gradient(to right, #d5d8dd, #49679c); 
+}
+
+
+/* Time display styling */
+.time-display {
+    margin-top: 5px; 
+    font-size: 14px;
+    color: #000000;
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+
+/* Album art styling */
+.album-art {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.album-art.active {
+    transform: scale(1.1); 
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.4); 
+}
+
+/* Background container for animation */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.2; /* Subtle background opacity */
+    transform: translate(-20%, -10%);
+}
+
+.background-container img {
+    position: absolute;
+    width: 100%;
+    max-width: 900px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0; 
+}
+
+.background-container img.active {
+    transform: scale(1.2); 
+    opacity: 1; 
+}
+
+.background-container img:not(.active) {
+    transform: scale(1.05) rotate(2deg);
+    transition: transform 6s ease-in-out;
+}
+
+/* Track info styling */
+.track-info {
+    margin-top: 10px;
+    color: #262525;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.track-info h3 {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.track-info p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #a1a0a0;
+}
+
+/* Phone container styling */
+.Phone {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.Phone-frame {
+    width: 100%;
+    top: 0;
+    position: relative;
+    z-index: 2;
+    transform: translate(0px, 370px);
+}
+
+.Phone-background {
+    max-height: 780px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 25px;
+    border-radius: 25px;
+    transform: translate(0px, 360px);
+    bottom: 50px;
+}
+
+.pill {
+    position: absolute;
+    bottom: 13px;
+    background-color: rgb(175, 174, 174);
+    height: 3px;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+    z-index: 3;
+    transform: translate(-95px, -275px);
+}
+
+/* New Code: Animated Dots Background */
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    /* overflow: hidden; */
+    background: #0e101b;
+}
+
+.dots {
+    width: 0.1vw;
+    height: 0.1vw;
+    border-radius: 50%;
+    position: absolute;
+    top: 140%;
+    transform: translate(-50%, -50%);
+    animation-name: growAscend;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-timing-function: ease-out;
+}
+
+@keyframes growAscend {
+    100% {
+    top: -10%;
+    width: 1vw;
+    height: 1vw;
+    }
+}
+
+/* Styles for mobile devices */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .header {
+        font-size: 1.5rem;
+    }
+}
+
+/* Styles for tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .container {
+        padding: 15px;
+    }
+
+    .header {
+        font-size: 2rem;
+    }
+}
+
+/* Styles for laptops and desktops */
+@media (min-width: 1025px) {
+    .container {
+        padding: 20px;
+    }
+
+    .header {
+        font-size: 2.5rem;
+    }
+}
+
