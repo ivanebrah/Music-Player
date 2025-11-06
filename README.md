@@ -6,7 +6,7 @@
 
 Overview
 
-> This project is a fully functional music player built using vanilla JavaScript, HTML5, and CSS3. It simulates the experience of a modern mobile music app—complete with animated album transitions, a custom phone frame UI, and interactive controls. The goal was to create a responsive, immersive audio interface without relying on external libraries or frameworks.
+> This project is a fully functional music player built using vanilla JavaScript, HTML5, and CSS3. It simulates the experience of a modern mobile music app complete with animated album transitions, a custom phone frame UI, and interactive controls. The goal was to create a responsive, immersive audio interface without relying on external libraries or frameworks.
 
 > Whether you're toggling shuffle, scrubbing through a track, or just admiring the animated background, every interaction is handled natively and intentionally.
 
