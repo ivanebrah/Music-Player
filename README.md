@@ -26,6 +26,6 @@ Core Features
 - 🎵 Dynamic playlist with real audio playback
 - ⏯️ Play, pause, next, previous, shuffle, and repeat controls
 - 📊 Interactive progress bar with seek functionality
-- 🔊 Volume slider with real-time feedback
+- 🔊 Volume slider with real-time feedback 
 - 🎨 Animated album art and ambient background visuals
 - 📱 Mobile-style UI with responsive layout
